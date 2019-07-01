@@ -35,7 +35,7 @@ data class User(
 
             val (firstName, lastName) = Utils.parseFullName(fullName)
 
-            return if (fullName.isNullOrEmpty()) User("$lastId") else User("$lastId", firstName ?: "", lastName ?: "")
+            return User("$lastId", firstName, lastName)
         }
     }
 }

@@ -18,7 +18,8 @@ object Utils {
         if(firstName?.isEmptyOrBlank() == true && lastName?.isEmptyOrBlank() == true) return null
         if(lastName == null && firstName == null) return null
         if(lastName == null) return firstName?.get(0).toString()
-        return "${firstName?.get(0).toString().toUpperCase()}${ lastName[0].toString().toUpperCase()}"
+        if(firstName == null) return lastName[0].toString()
+        return "${firstName[0].toString().toUpperCase()}${ lastName[0].toString().toUpperCase()}"
     }
 
     fun String?.isEmptyOrBlank() : Boolean = this?.isEmpty() == true || this?.isBlank() == true

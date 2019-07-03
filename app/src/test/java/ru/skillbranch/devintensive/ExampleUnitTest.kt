@@ -5,6 +5,7 @@ import org.junit.Test
 import org.junit.Assert.*
 import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
+import ru.skillbranch.devintensive.extensions.format
 import ru.skillbranch.devintensive.extensions.humanizeDiff
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
@@ -67,5 +68,11 @@ class ExampleUnitTest {
         println(Utils.toInitials("John", null)) //J
         println(Utils.toInitials(null, null)) //null
         println(Utils.toInitials(" ", "")) //null
+    }
+
+    @Test
+    fun date_format_test(){
+        println(Date().format()) //14:00:00 27.06.19
+        println(Date().format("HH:mm"))//14:00
     }
 }
